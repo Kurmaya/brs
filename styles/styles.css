@@ -1,0 +1,205 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    /* background-color: black; */
+    width:100%;
+    height: 100%;
+    font-family: sans-serif;
+    position: relative;
+}
+nav{
+    width:100%;
+    /* height:10vh; */
+    background: white;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar{
+    width:80%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.logo{
+    position: relative;
+    width:100px;
+    height: 80px;
+}
+.logo img{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    object-fit: contain;
+}
+.close{
+    position: absolute;
+    width:100px;
+    height:30px;
+    display: flex;
+    top:50%;
+    transform: translateY(-50%);
+    left:5%;
+    display: grid;
+    place-items:center;
+    cursor: pointer;
+}
+.close.active .bar:nth-of-type(1){
+    transform: rotateZ(45deg) translateY(14px);
+}
+.close.active .bar:nth-of-type(3){
+    transform: rotateZ(-45deg) translateY(-14px);
+}
+.close.active .bar:nth-of-type(2){
+    opacity: 0;
+}
+.bar{
+    width:30px;
+    height:3px;
+    background: black;
+    transition: .3s ease;
+}
+.intro-modal{
+    width:100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 110;
+    background: black;
+    top:0;
+    left:0;
+    transition: .5s ease;
+}
+.intro-modal.fade{
+    opacity: 0;
+}
+.intro-modal.hide{
+    display: none;
+}
+.play{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 150px;
+	height: 150px;
+    /* border:150px solid white; */
+	border-top: 75px solid transparent;
+	border-left: 150px solid black;
+	border-bottom: 75px solid transparent;
+    border-right:0;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    align-items: center;
+    transition: .3s ease;
+    
+}
+.play h2{
+    position: absolute;
+    opacity: 0;
+    left:-100px;
+    width:150px;
+    top:50%;
+    transform: translateY(-50%);
+}
+.play:hover{
+    width:200px;
+    height: 200px;
+    border-top: 150px solid transparent;
+	border-left: 200px solid white;
+	border-bottom: 150px solid transparent;
+    border-right:0;
+    cursor: pointer;
+}
+.play:hover > *{
+left: -180px;
+opacity: 1;
+/* transform: translateX(100px); */
+}
+.intro-modal video{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    /* object-fit: fill; */
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.skip{
+    color:white;
+    font-size: 2rem;
+    position: absolute;
+    top:90%;
+    left:90%;
+    transform: translate(-80%,-80%);
+}
+#hero{
+    position: relative;
+    width: 100vw;
+    height: 90vh;
+    top:10vh;
+}
+.list{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top:30%;
+    color:white;
+    z-index: 101;
+    margin: auto auto auto 5%;
+    
+}
+.list h2{
+    color: rgb(195, 195, 195);
+    font-size: 3rem;
+    margin:5px 0;
+    cursor: pointer;
+    display: block;
+    width: 80%;
+    text-align: left;
+    transition: .2s ease;
+}
+.list h2:hover{
+    color:white;
+}
+.bg-holder{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    left:-150%;
+    transition: .5s ease;
+}
+.bg-holder.active{
+    left:0;
+}
+.bg-holder img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* object-fit: contain; */
+    aspect-ratio: 16/9;
+}
+.hero-desc{
+    position: absolute;
+    top:50%;
+    left:20%;
+    transform: translate(-20%,-50%);
+    z-index: 10;
+}
+.hero-desc h2{
+    color:#d6270f;
+    font-size: 3rem;
+}
+.overlay{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background: rgba(0,0,0,.7);
+}
