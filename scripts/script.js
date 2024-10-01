@@ -2,7 +2,7 @@ const vid = document.querySelector('video');
 const skip = document.querySelector(".skip");
 const play = document.querySelector('.play');
 const modal = document.querySelector('.intro-modal');
-
+document.body.style.overflow='hidden';
 skip.addEventListener("click",()=>{
     modal.classList.add('fade');
     setTimeout(()=>{
@@ -21,9 +21,10 @@ play.addEventListener('click',()=>{
         modal.classList.add('fade');
     setTimeout(()=>{
         modal.classList.add('hide');    
-    },1000)
         document.body.style.overflowX='hidden';
         document.body.style.overflowY='auto';
+    },1000)
+       
     }  
 })
 
