@@ -2,6 +2,19 @@ const vid = document.querySelector('video');
 const skip = document.querySelector(".skip");
 const play = document.querySelector('.play');
 const modal = document.querySelector('.intro-modal');
+
+document.addEventListener('DOMContentLoaded',()=>{
+    var isShow = localStorage.getItem('isShow');
+    if(isShow == null){
+        localStorage.setItem('isShow',1);
+        
+    }
+    else if(isShow == 1 ){
+        modal.classList.add('hide');
+        document.body.style.overflowX='hidden';
+        document.body.style.overflowY='auto';
+    }
+    })
 document.body.style.overflow='hidden';
 skip.addEventListener("click",()=>{
     modal.classList.add('fade');
@@ -27,7 +40,22 @@ play.addEventListener('click',()=>{
        
     }  
 })
-
+// modal.addEventListener('scroll',()=>{
+//     vid.play();
+//     vid.playbackRate=1.2;
+//     vid.onended= ()=>{
+//         modal.classList.add('fade');
+//     setTimeout(()=>{
+//         modal.classList.add('hide');    
+//         document.body.style.overflowX='hidden';
+//         document.body.style.overflowY='auto';
+//     },1000)
+//        console.log('scroll')
+//     }  
+// })
+// window.onscroll= function(){
+//     console.log('scrolled')
+// }
 const heros= document.querySelectorAll('.bg-holder');
 heros.forEach(hero=>{
     let ch = document.createElement('div');
@@ -110,7 +138,7 @@ function heroChange(){
                 h.classList.remove('active');
             })        
             heros[count].classList.add('active');
-            if(count<heros.length){
+            if(count<heros.length-1){
                 count++
             }
             else if(count=heros.length){
@@ -119,7 +147,7 @@ function heroChange(){
             
            
         
-    },2000)
+    },10000)
 }
 
 // heroChange();

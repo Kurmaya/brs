@@ -3,9 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Big Red Studios- Gallery</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
-    
+<body style="background-color: black;">
+    <nav>
+        <div class="close">
+            
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li class="links"><a href="index.html">Home</a></li>
+                <li class="links"><a href="about.html">About</a></li>
+                <li class="links"><a href="services.html">Services</a></li>
+                <li class="links"><a href="bts.html">Gallery</a></li>
+            </ul>   
+        </div>
+        <div class="navbar">
+            <div class="logo">
+                <img src="./assests/bigred-logo-resized.png" alt="">
+            </div>
+           
+        </div>
+        
+
+    </nav>
+
+    <section id="gallery">
+        <div class="gallery-wrapper">
+            <img src="./assests/images/gallery/IMG_1781.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1796.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1800.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1833.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1849.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1850.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1873.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1889.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1890.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1895.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1899.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1902.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1929.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1938.jpg" alt="">
+            <img src="./assests/images/gallery/IMG_1940.jpg" alt="">
+        </div>
+       <div class="gallery-lightbox">
+        <div class="image-holder">
+            <img src="" alt="">
+        </div>
+        
+        <div class="left-cont">
+            
+            <i class="arrow left"></i>
+        </div>
+        <div class="right-cont">
+            <i class="arrow right"></i>
+        </div>
+       </div>
+    </section>
+    <script src="./scripts/nav.js"></script>
+    <script>
+        let mages = document.querySelectorAll('.gallery-wrapper img');
+        let light =document.querySelector('.gallery-lightbox');
+        let left = document.querySelector('.left');
+        let right = document.querySelector('.right');
+        let store;
+        // mages.forEach(i=>{
+        //     i.addEventListener('click',()=>{
+        //         light.classList.add('active');
+        //         light.querySelector('img').src= i.src;
+        //     })
+        // });
+        for (let i =0 ; i<mages.length; i++){
+            mages[i].addEventListener('click',()=>{
+                store = i;
+                light.classList.add('active');
+                light.querySelector('img').src= mages[i].src;
+            })
+        }
+        light.addEventListener('click', e=>{
+            if(e.target.classList.contains('left') || e.target.classList.contains ('right')){
+               return
+            }
+            else if(e.target !== e.currentTarget ){
+                light.classList.remove('active');
+                light.querySelector('img').src= '';
+            }
+        })
+        left.addEventListener('click',()=>{
+            
+            // console.log(mages[store]);
+            if(store >= 0){
+                store--;
+                light.querySelector('img').src= mages[store].src;
+            }
+        })
+        right.addEventListener('click',()=>{
+            
+            if(store < mages.length+1){
+                store++;
+                light.querySelector('img').src= mages[store].src;
+            }
+        })
+    </script>
 </body>
 </html>
