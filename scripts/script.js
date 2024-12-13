@@ -96,6 +96,7 @@ heroList[i].addEventListener('click',()=>{
                 document.querySelector('.light-img>img').src=heros[i].querySelector('img').src;
                 lightHead.textContent = 'Family Affair | A Short Comedy Film';
             lightP.textContent= 'Tanner is a high school senior who seems to have everything going for him. He’s smart, athletic, and popular -- but there’s something (or rather someone) he has to hide from his mother.';
+            document.querySelector('.light-links a').setAttribute('target','_blank');
             document.querySelector('.light-links a').href='https://anemonefilms.vhx.tv/';
             document.querySelector('.light-links a').textContent='Rent/Buy Here.'
             document.querySelector('.light-links a').classList.add('active');
