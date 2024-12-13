@@ -669,9 +669,39 @@ position: relative;
         grid-row: span 2 !important;
     }
 }
-@media screen and (min-width:300px) and (max-width:765px) {
+@media screen and (min-width:300px) and (max-width:765px) { 
+    /* html,body{
+        overflow-x: hidden;
+    } */
+     .logo{
+        width:80px;
+     }
+     h2{
+        font-size: 2rem;
+     }
+     h3{
+        font-size: 1.2rem;
+     }
+    nav{
+        width:100vw;
+    }
     .nav-links{
         width:80vw;
+    }
+    .list h2{
+        font-size: 1.5rem;
+    }
+    .light-box.active{
+        height:40vh;
+    }
+    .light-desc{
+        text-align: center!important;
+    }
+    .light-desc p{
+        width:100%;
+    }
+    #second h2{
+        font-size: 2rem;
     }
     .gallery-wrapper{
         grid-template-columns: repeat(1,1fr);
@@ -695,5 +725,17 @@ position: relative;
     }
     .left-cont{
         left:15%;
+    }
+    .second-holder{
+        display: grid;
+    }
+    .team-holder{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .row{
+        display: grid;
+    }
+    .serv h2, .serv h3{
+        margin-left:20px;
     }
 }
