@@ -831,7 +831,7 @@ position: relative;
         height:200px;
         /* background: red; */
         position: absolute;
-        top: 70%;
+        top: 60%;
         right: 5%;
         z-index: 10;
         display: flex;
