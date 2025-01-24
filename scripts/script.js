@@ -150,5 +150,66 @@ function heroChange(){
         
     },10000)
 }
+const mobileBg = document.querySelectorAll(".bg-holder-mobile");
+const mobileBgImg = document.querySelectorAll(".bg-holder-mobile img")
+const progressBar = document.querySelectorAll(".indicators");
 
+for(let i=0; i < progressBar.length;i++){
+progressBar[i].addEventListener('click',()=>{
+    
+    progressBar.forEach(p=>{
+        p.classList.remove('active');
+    })
+    progressBar[i].classList.add('active');
+    mobileBg.forEach(m=>{
+        m.classList.remove('active');
+    })
+    mobileBg[i].classList.add('active');
+})
+}
+for(let i = 0 ;i<mobileBgImg.length;i++){
+mobileBgImg[i].addEventListener('click',()=>{
+    document.querySelector('.light-box').classList.add('active');
+    switch (i) {
+        case 0:
+            // console.log('0')
+            lightHead.textContent = 'Fowl Play | A Feature Film Franchise';
+            document.querySelector('.light-img>img').src=heros[i].querySelector('img').src;
+            lightP.textContent= 'It’s Chicken Run, but with Pigeons! These Claymation Birds will take flight in 2025. Stay Tuned.';
+            document.querySelector('.light-links a').href='';
+            document.querySelector('.light-links a').textContent=''
+            document.querySelector('.light-links a').classList.remove('active');
+            break;
+    
+            case 1:
+                document.querySelector('.light-img>img').src=heros[i].querySelector('img').src;
+                lightHead.textContent = 'Family Affair | A Short Comedy Film';
+            lightP.textContent= 'Tanner is a high school senior who seems to have everything going for him. He’s smart, athletic, and popular -- but there’s something (or rather someone) he has to hide from his mother.';
+            document.querySelector('.light-links a').setAttribute('target','_blank');
+            document.querySelector('.light-links a').href='https://anemonefilms.vhx.tv/';
+            document.querySelector('.light-links a').textContent='Rent/Buy Here.'
+            document.querySelector('.light-links a').classList.add('active');
+            break;
+            case 2:
+                document.querySelector('.light-img>img').src=heros[i].querySelector('img').src;
+                lightHead.textContent = 'Notes On: Nudes | A Short Comedy Series';
+            lightP.textContent= 'It’s hard to get some. After a long day at work, Tay just wants to get off. The Grindr Grid stands in their way, but longing for action, they persist. However, it seems the notes don’t stop at the office.Stay Tuned for the next film, Notes On: Cooties.';
+            document.querySelector('.light-links a').href='';
+            document.querySelector('.light-links a').textContent=''
+            document.querySelector('.light-links a').classList.remove('active');
+            
+            break;
+            case 3:
+                document.querySelector('.light-img>img').src=heros[i].querySelector('img').src;
+                lightHead.textContent = 'What Will The Guests Say!? | A Fantasy Horror Film';
+            lightP.textContent= 'This is a film about the nightmare of growing up in a perfectionist household, told through the imagination of a misfit child.';
+            document.querySelector('.light-links a').classList.remove('active');
+            document.querySelector('.light-links a').href='';
+            document.querySelector('.light-links a').textContent=''
+            break;
+        default:
+            break;
+    }
+})
+}
 // heroChange();

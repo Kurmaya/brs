@@ -200,6 +200,9 @@ opacity: 1;
     height: 90vh;
     top:10vh;
 }
+.mobile-bg-container{
+    display: none;
+}
 .list{
     position: absolute;
     /* width: 50%; */
@@ -276,13 +279,13 @@ opacity: 0;
 z-index: -1;
 }
 .light-box.active{
-    width:100vw;
+    width:100%;
     height: 30vh;
-    bottom:0;
+    /* bottom:0; */
     left:0;
     z-index: 11;
     opacity: 1;
-    position: absolute;
+    /* position: absolute; */
 }
 .light-holder{
     display: flex;
@@ -669,6 +672,9 @@ position: relative;
         grid-column: span 1 !important;
         grid-row: span 2 !important;
     }
+    .mobile-bg-container{
+        display: none;
+    }
 }
 @media screen and (min-width:300px) and (max-width:765px) { 
     html,body{
@@ -691,6 +697,7 @@ position: relative;
     }
     .list{
         width:90%;
+        display: none;
         /* backdrop-filter: blur(5px); */
     }
     .list h2{
@@ -757,11 +764,105 @@ position: relative;
     .serv h2, .serv h3{
         margin-left:20px;
     }
+    .bg-holder{
+        display: none;
+    }
+    .mobile-bg-container{
+        position: relative;
+        width: 100%;
+        height:90vh;
+        overflow: hidden;
+        display: block;
+    }
+    .bg-holder-mobile{
+        position: absolute;
+        width:100%;
+        height: 100%;
+        overflow: hidden;
+        top:-100%;
+        transition: .3s ease;
+    }
+    .bg-holder-mobile.active{
+        top:0;
+    }
+    /* .bg-holder-mobile:nth-of-type(1){
+        z-index: 5;
+    }
+    .bg-holder-mobile:nth-of-type(2){
+        z-index: 4;
+    }
+    .bg-holder-mobile:nth-of-type(3){
+        z-index: 3;
+    }
+    .bg-holder-mobile:nth-of-type(4){
+        z-index: 2;
+    } */
+    .hero-desc{
+        top:85%;
+        left:20%;
+        backdrop-filter: invert(10%);
+        /* width:80%; */
+    }
+    .hero-desc h2{
+        color:white;
+        text-align: left;
+        text-transform: uppercase;
+        
+    }
+    .bg-holder-mobile h2{
+        font-size:2rem;
+
+    }
     .bg-holder:nth-of-type(3) > img {
         object-position: center;
         /* object-fit: cover; */
     }
-    .bg-holder img{
+    .bg-holder img,.bg-holder-mobile img{
         object-fit: cover;
+        position: absolute;
+    width: 100%;
+    height: 100%;
+    /* object-fit: contain; */
+    aspect-ratio: 16 / 9;
+
+    }
+    .progress-bar{
+        width: 20px;
+        height:200px;
+        /* background: red; */
+        position: absolute;
+        top: 70%;
+        right: 5%;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .progress-bg{
+        position: absolute;
+        width:5px;
+        height:100%;
+        background: white;
+    }
+    .indicators{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: white;
+        display: grid;
+        place-items:center;
+        position: relative;
+        z-index: 15;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    .indicators.active{
+        width:35px;
+        height:35px;
+        background: rgba(255,0,0,1);
+        color:white;
+        border: solid 2px black;
+        vertical-align: middle;
     }
 }
