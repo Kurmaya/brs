@@ -207,7 +207,7 @@ opacity: 1;
     position: absolute;
     /* width: 50%; */
     /* height: 80%; */
-    top:25%;
+    top:50%;
     color:white;
     z-index: 10;
     margin: auto auto auto 5%;
@@ -228,9 +228,9 @@ opacity: 1;
     font-family: "Helvetica", sans-serif;
     letter-spacing: 1px;
     word-spacing: 3px;
-
+    text-shadow: 0 0 2.5rem BLACK;
 }
-.list h2:hover{
+.list h2:hover,.list h2.active{
     color:white;
 }
 .bg-holder{
@@ -269,20 +269,20 @@ opacity: 1;
 }
 .light-box{
 width:100%;
-height:30vh;
+height:90vh;
 background: rgba(255,255,255,.8);
 position: absolute;
-bottom:0;
-left:100%;
+top:0;
+right:-100%;
 transition: .3s ease;
 opacity: 0;
 z-index: -1;
 }
 .light-box.active{
-    width:100%;
-    height: 30vh;
+    width:33%;
+    height: 90vh;
     /* bottom:0; */
-    left:0;
+    right:0;
     z-index: 11;
     opacity: 1;
     /* position: absolute; */
@@ -315,9 +315,14 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-width:80%;
+width:100%;
 margin:20px auto;
+position: relative;
+top:25%;
 gap:20px;
+}
+.light-desc h2{
+    text-align: center;
 }
 .light-desc p{
     width:60%;
@@ -338,14 +343,14 @@ gap:20px;
 }
 .min{
     position: absolute;
-    right:5%;
+    left:5%;
     top:5%;
     cursor: pointer;
     font-size: 2rem;
 }
 #second{
     width:85%;
-    height: 100%;
+    height: 90vh;
     margin: auto;
     position: relative;
     top:100px;
@@ -363,7 +368,7 @@ h3{
 }
 .second-holder h4{
     font-size: 1rem;
-    width:80%;
+    width: 150px;
     text-align: center;
     font-weight: 200;
 }
@@ -386,8 +391,10 @@ h3{
 } 
 .service img{
     width:150px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    padding: 2rem;
     clip-path: circle(48%);
+    background: #d6270f!important;
 }
 .service:hover{
 transform: scale(1.05);
@@ -423,8 +430,10 @@ transform: scale(1.05);
 
 .serv{
     background: black!important;
-    width:100%!important;
+    width:100%!important; 
     color:white!important; 
+    height:100vh!important;
+    top:10vh!important;
 }
 .serv > h2 , .serv > h3{
 margin-left:100px;
@@ -457,7 +466,7 @@ margin-left:100px;
 }
 #team h2{
     font-size:2.5rem;
-    margin:10px auto 100px;
+    margin: 30px auto 60px;
 }
 .team-holder{
     display: grid;
@@ -705,10 +714,16 @@ position: relative;
         margin:auto 0;
     }
     .light-box.active{
-        height:40vh;
+        height:50vh;
+        width:100%;
+    }
+    .light-holder{
+        gap:0;
     }
     .light-desc{
         text-align: center!important;
+        top:10%;
+        width:95%;
     }
     .light-desc h2{
         font-size: 1.5rem;
@@ -753,13 +768,17 @@ position: relative;
         gap:5px;
     }
     .second-holder .service img{
-        width:90px;
+        width:120px;
+        /* padding:1rem; */
     }
     .team-holder{
         grid-template-columns: repeat(1,1fr);
     }
     .row{
         display: grid;
+    }
+    .serv{
+        height:100%!important;
     }
     .serv h2, .serv h3{
         margin-left:20px;

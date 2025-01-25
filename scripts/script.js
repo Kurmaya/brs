@@ -81,10 +81,15 @@ for(let i=0;i<heroList.length;i++){
     
 heroList[i].addEventListener('click',()=>{
     document.querySelector('.light-box').classList.add('active');
+    heroList.forEach(l=>{
+        l.classList.remove('active');
+    })
+    heroList[i].classList.add('active');
     switch (i) {
         case 0:
             // console.log('0')
-            lightHead.textContent = 'Fowl Play | A Feature Film Franchise';
+            
+            lightHead.innerHTML = 'Fowl Play  </br> A Feature Film Franchise';
             document.querySelector('.light-img>img').src=heros[i].querySelector('img').src;
             lightP.textContent= 'It’s Chicken Run, but with Pigeons! These Claymation Birds will take flight in 2025. Stay Tuned.';
             document.querySelector('.light-links a').href='';
@@ -94,7 +99,7 @@ heroList[i].addEventListener('click',()=>{
     
             case 1:
                 document.querySelector('.light-img>img').src=heros[i].querySelector('img').src;
-                lightHead.textContent = 'Family Affair | A Short Comedy Film';
+                lightHead.innerHTML = 'Family Affair </br> A Short Comedy Film';
             lightP.textContent= 'Tanner is a high school senior who seems to have everything going for him. He’s smart, athletic, and popular -- but there’s something (or rather someone) he has to hide from his mother.';
             document.querySelector('.light-links a').setAttribute('target','_blank');
             document.querySelector('.light-links a').href='https://anemonefilms.vhx.tv/';
@@ -103,7 +108,7 @@ heroList[i].addEventListener('click',()=>{
             break;
             case 2:
                 document.querySelector('.light-img>img').src=heros[i].querySelector('img').src;
-                lightHead.textContent = 'Notes On: Nudes | A Short Comedy Series';
+                lightHead.innerHTML = 'Notes On: Nudes </br> A Short Comedy Series';
             lightP.textContent= 'It’s hard to get some. After a long day at work, Tay just wants to get off. The Grindr Grid stands in their way, but longing for action, they persist. However, it seems the notes don’t stop at the office.Stay Tuned for the next film, Notes On: Cooties.';
             document.querySelector('.light-links a').href='';
             document.querySelector('.light-links a').textContent=''
@@ -112,7 +117,7 @@ heroList[i].addEventListener('click',()=>{
             break;
             case 3:
                 document.querySelector('.light-img>img').src=heros[i].querySelector('img').src;
-                lightHead.textContent = 'What Will The Guests Say!? | A Fantasy Horror Film';
+                lightHead.innerHTML = 'What Will The Guests Say!? </br> A Fantasy Horror Film';
             lightP.textContent= 'This is a film about the nightmare of growing up in a perfectionist household, told through the imagination of a misfit child.';
             document.querySelector('.light-links a').classList.remove('active');
             document.querySelector('.light-links a').href='';
