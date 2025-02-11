@@ -31,7 +31,7 @@ body{
 }
 nav{
     width:100%;
-    /* height:10vh; */
+    height:12vh;
     background: white;
     position: fixed;
     top:0;
@@ -79,14 +79,41 @@ text-decoration: none;
 .logo{
     position: relative;
     width:100px;
-    height: 80px;
+    height: 12vh;
+    /* transform-style: preserve-3d;
+    perspective: 1000px; */
 }
-.logo img{
-    position: absolute;
+.mobile-logo{
+    display: none;
     width:100%;
-    height: 100%;
+    height:100%;
     object-fit: contain;
 }
+.logo img:nth-of-type(1){
+    position: absolute;
+    width:100px;
+    height: 12vh;
+    /* object-fit: contain; */
+    /* transform-style: preserve-3d; */
+    /* perspective: 1000px; */
+    z-index: 10;
+}
+.eye{
+    position: absolute;
+    height:40px!important;
+    width:40px!important;
+    top:24px!important;
+    z-index: 10!important;
+    /* opacity: 0; */
+}
+.left{
+    left:12px!important;
+}
+.right{
+    left:45px!important;
+    /* top:32px!important */
+}
+
 .close{
     position: absolute;
     width:100px;
@@ -699,6 +726,12 @@ form h4{
     nav{
         width:100%;
     }
+    .eye,.anchor{
+        display:none;
+    }
+    .mobile-logo{
+        display: block;
+    }
     #hero{
         height:100vh;
     }
@@ -774,6 +807,12 @@ form h4{
     }
     .nav-links{
         width:80vw;
+    }
+    .eye,.anchor{
+        display:none;
+    }
+    .mobile-logo{
+        display: block;
     }
     .list{
         width:90%;

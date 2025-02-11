@@ -30,8 +30,13 @@
             </ul>   
         </div>
         <div class="navbar">
-            <div class="logo">
-                <a href="index.html"><img src="./assests/bigred-logo-resized.png" alt=""></a>
+             <div class="logo">
+                <a href="index.html" >
+                    
+                <img class="anchor" src="./assests/logo anim/logo-anim-bg.png" alt="">
+                <img src="./assests/logo anim/eye-left.svg" alt="" class="eye left" style="  transform: translateY(-50%); ">
+                <img class="eye right"src="./assests/logo anim/eye-right.svg" alt="" style="  transform: translateY(-50%);"></a>
+                <img src="./assests/bigred-logo-resized.png" class="mobile-logo" alt="">
             </div>
            
         </div>
@@ -171,5 +176,35 @@
         
     </section> -->
     <script src="./scripts/nav.js"></script>
+    <script>
+        const logo = document.querySelector('.logo img');
+        
+      document.addEventListener("mousemove",(e)=>{
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+
+        const anchor = document.querySelector('.anchor');
+        const rekt = anchor.getBoundingClientRect();
+        const anchorX = rekt.left + rekt.width/2;
+        const anchorY = rekt.top + rekt.height/2;
+        
+        const angleDeg = angle(mouseX, mouseY , anchorX ,anchorY);
+        console.log(angleDeg);
+        const ar = document.querySelectorAll(".eye");
+         ar.forEach(a=>{
+            a.style.transform=`rotate(${180+angleDeg}deg)`;
+            a.style.opacity='1';
+        })
+      });
+
+      function angle(cx , cy , ex , ey){
+        const dy =ey -cy;
+        const dx = ex - cx;
+        const rad  = Math.atan2(dy,dx);
+        const deg = rad * 180 /Math.PI;
+        return deg;
+      }
+
+    </script>
 </body>
 </html>
